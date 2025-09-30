@@ -25,7 +25,16 @@ const GenerateSeoTagsOutputSchema = z.object({
 export type GenerateSeoTagsOutput = z.infer<typeof GenerateSeoTagsOutputSchema>;
 
 export async function generateSeoTags(input: GenerateSeoTagsInput): Promise<GenerateSeoTagsOutput> {
-  return generateSeoTagsFlow(input);
+  try {
+    return await generateSeoTagsFlow(input);
+  } catch (error) {
+    console.error('Error generating SEO tags:', error);
+    // Return a default value in case of an error
+    return {
+      title: input.pageName,
+      description: `Portfolio of ${input.pageName}`,
+    };
+  }
 }
 
 const prompt = ai.definePrompt({

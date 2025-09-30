@@ -24,7 +24,13 @@ const GenerateSeoTextOutputSchema = z.object({
 export type GenerateSeoTextOutput = z.infer<typeof GenerateSeoTextOutputSchema>;
 
 export async function generateSeoText(input: GenerateSeoTextInput): Promise<GenerateSeoTextOutput> {
-  return generateSeoTextFlow(input);
+  try {
+    return await generateSeoTextFlow(input);
+  } catch (error) {
+    console.error(`Error generating SEO text for ${input.sectionName}:`, error);
+    // Return the original content as a fallback
+    return { seoText: input.content };
+  }
 }
 
 const prompt = ai.definePrompt({
