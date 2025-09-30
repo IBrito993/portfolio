@@ -27,7 +27,7 @@ export async function generateSeoText(input: GenerateSeoTextInput): Promise<Gene
   try {
     return await generateSeoTextFlow(input);
   } catch (error) {
-    console.error(`Error generating SEO text for ${input.sectionName}:`, error);
+    console.error(`Error in generateSeoTextFlow for section "${input.sectionName}":`, error instanceof Error ? error.message : String(error));
     // Return the original content as a fallback
     return { seoText: input.content };
   }
@@ -59,6 +59,9 @@ const generateSeoTextFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      throw new Error('The AI model did not return any output.');
+    }
+    return output;
   }
 );

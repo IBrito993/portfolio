@@ -16,7 +16,7 @@ export default async function Home() {
   ] = await Promise.all([
     generateSeoText({ 
       sectionName: "Hero", 
-      content: "Hi, I’m Ivan Brito. Software Engineer based in Santiago, Chile. I build robust backend systems and scalable web apps. Check out my work & get in touch." 
+      content: "Introduction for a software engineer specializing in backend systems." 
     }),
     generateSeoText({
       sectionName: "About",
