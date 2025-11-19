@@ -45,5 +45,5 @@ This is a Next.js 15 portfolio website with AI-powered SEO generation.
 
 ## Naming Conventions
 
-- **Variables and methods**: Use `snake_case`
+- **Variables and methods**: Use `camelCase`
 - **Files and classes**: Use `camelCase`
