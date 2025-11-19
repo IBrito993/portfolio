@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import type { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
 
-type Icon = LucideIcon | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>>;
+type Icon = LucideIcon | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>> | ((props: SVGProps<SVGSVGElement>) => React.JSX.Element);
 
 export interface Skill {
   name: string;
