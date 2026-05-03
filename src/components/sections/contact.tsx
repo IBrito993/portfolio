@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Github, Linkedin } from "lucide-react";
 import { sendMessage } from "@/actions/send-message";
+import { socialLinks } from "@/lib/data";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -54,13 +55,13 @@ export function Contact({ seoText }: ContactProps) {
       <Heading title="Get In Touch" description={seoText} />
       <div className="mt-12 max-w-lg mx-auto">
         <div className="flex justify-center gap-6 mb-8">
-            <Link href="https://github.com/IBrito993" target="_blank" rel="noopener noreferrer">
+            <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="w-12 h-12">
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/ibrito93/" target="_blank" rel="noopener noreferrer">
+            <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="w-12 h-12">
                 <Linkedin className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>

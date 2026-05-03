@@ -42,16 +42,16 @@ export const workExperience: Experience[] = [
 ];
 
 export const education: Education[] = [
-    {
-        degree: "Bachelor of Science in Computer Science",
-        university: "University of Chile",
-        years: "2014 - 2018"
-    },
-    {
-        degree: "Certified Spring Professional",
-        university: "VMware",
-        years: "2021"
-    }
+  {
+    degree: "Bachelor of Science in Computer Science",
+    university: "University of Chile",
+    years: "2014 - 2018"
+  },
+  {
+    degree: "Certified Spring Professional",
+    university: "VMware",
+    years: "2021"
+  }
 ];
 
 export const projects: Project[] = [
@@ -81,6 +81,12 @@ export const projects: Project[] = [
   },
 ];
 
+export const socialLinks = {
+  github: "https://github.com/IBrito993",
+  linkedin: "https://www.linkedin.com/in/ibrito93/",
+};
+
+export const heroContent = "Introduction for a software engineer specializing in backend systems. Experienced in building scalable applications and APIs. Passionate about open-source and cloud technologies. Mainly focused on Java, and Python development."
 export const aboutContent = "With over 5 years in software development, I specialize in backend systems, automation, APIs, and full-stack web applications. I enjoy working with Java, microservices, cloud infrastructure, and lean/agile principles."
 export const projectsContent = "A selection of my personal projects. I'm passionate about exploring new technologies and building useful applications. Here are some of the projects I've worked on, showcasing my skills in backend development, system design, and security."
 export const resumeContent = "My professional journey in software engineering, highlighting my roles, responsibilities, and key achievements. I have a strong background in computer science and a passion for continuous learning and professional growth."

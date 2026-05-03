@@ -4,17 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Github, Linkedin, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/lib/data";
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -36,13 +33,13 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Ivan Brito. All Rights Reserved.
         </p>
         <div className="flex items-center gap-4">
-          <Link href="https://github.com/IBrito993" target="_blank" rel="noopener noreferrer">
+          <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon">
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/ibrito93/" target="_blank" rel="noopener noreferrer">
+          <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon">
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
