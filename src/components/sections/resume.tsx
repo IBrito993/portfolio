@@ -17,8 +17,8 @@ export function Resume({ seoText }: ResumeProps) {
             Work Experience
           </h3>
           <div className="relative border-l-2 border-primary/20 pl-8 space-y-12">
-            {workExperience.map((item, index) => (
-              <div key={index} className="relative">
+            {workExperience.map((item) => (
+              <div key={`${item.company}-${item.years}`} className="relative">
                 <div className="absolute -left-[38px] top-1 h-4 w-4 rounded-full bg-primary" />
                 <p className="text-sm text-muted-foreground">{item.years}</p>
                 <h4 className="text-xl font-semibold mt-1">{item.jobTitle}</h4>
@@ -34,8 +34,8 @@ export function Resume({ seoText }: ResumeProps) {
             Education
           </h3>
           <div className="relative border-l-2 border-primary/20 pl-8 space-y-12">
-            {education.map((item, index) => (
-               <div key={index} className="relative">
+            {education.map((item) => (
+              <div key={`${item.university}-${item.years}`} className="relative">
                 <div className="absolute -left-[38px] top-1 h-4 w-4 rounded-full bg-primary" />
                 <p className="text-sm text-muted-foreground">{item.years}</p>
                 <h4 className="text-xl font-semibold mt-1">{item.degree}</h4>

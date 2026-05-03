@@ -9,16 +9,18 @@ import { generateSeoTags } from "@/ai/flows/generate-seo-tags";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const SEO_KEYWORDS = "Software Engineer, Backend Developer, Java, Spring Boot, Microservices, Cloud, Full-Stack, Ivan Brito, Portfolio";
+
 export async function generateMetadata(): Promise<Metadata> {
   const seoTags = await generateSeoTags({
     pageName: "Ivan Brito Portfolio",
-    keywords: "Software Engineer, Backend Developer, Java, Spring Boot, Microservices, Cloud, Full-Stack, Ivan Brito, Portfolio",
+    keywords: SEO_KEYWORDS,
   });
 
   return {
     title: seoTags.title,
     description: seoTags.description,
-    keywords: "Software Engineer, Backend Developer, Java, Spring Boot, Microservices, Cloud, Full-Stack, Ivan Brito, Portfolio",
+    keywords: SEO_KEYWORDS,
   };
 }
 

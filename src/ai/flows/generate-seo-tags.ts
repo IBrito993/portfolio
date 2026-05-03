@@ -1,5 +1,3 @@
-'use server';
-
 /**
  * @fileOverview This file defines a Genkit flow to generate SEO-optimized title and description meta tags for the portfolio website.
  *
@@ -63,6 +61,9 @@ const generateSeoTagsFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      throw new Error('The AI model did not return any output.');
+    }
+    return output;
   }
 );

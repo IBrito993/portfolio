@@ -1,5 +1,3 @@
-'use server';
-
 /**
  * @fileOverview This file defines a Genkit flow to generate SEO-optimized text for the portfolio website.
  *
